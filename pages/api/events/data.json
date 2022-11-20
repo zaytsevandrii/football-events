@@ -1,0 +1,76 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "name": "FIFA World Cup",
+      "events": "FIFA World Cup",
+      "venue": "Qatar",
+      "address": "Lusail Stadium",
+      "members": "Men's national football teams",
+      "date": "Nov 21, 2022",
+      "time": "10:00 AM",
+      "description": "The FIFA World Cup (also commonly called the Football World Cup, The World Cup, or just World Cup) is held every four years.",
+      "image": "/images/sample/event1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "UEFA Champions League Winners",
+      "events": "UEFA Champions League Winners",
+      "venue": "Turkey",
+      "address": "Atatürk Olympic Stadium, Istanbul, Turkey",
+      "members": "Top football clubs in Europe",
+      "date": "June 10, 2023",
+      "time": "8:00 PM ",
+      "description": "The UEFA Champions League (usually referred to as the Champions League) is the annual football cup competition for the top football clubs in Europe. The competition is played between the European national league champions.",
+      "image": "/images/sample/event2.jpg"
+    },
+    {
+      "id": "3",
+      "name": "UEFA Nations League",
+      "events": "UEFA Nations League",
+      "venue": "Netherlands",
+      "address": "Netherlands",
+      "members": "European nations",
+      "date": "June 18, 2023",
+      "time": "7:00 PM ",
+      "description": "The UEFA Nations League is relatively newly-founded competition between 55 European nations competing in four leagues. The 55 teams are split into four leagues based on their UEFA ranking. Each league will be split again into four groups of either three or four teams.",
+      "image": "/images/sample/event3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "AFC Asian Cup",
+      "events": "AFC Asian Cup",
+      "venue": "Qatar",
+      "address": "Lusail Stadium",
+      "members": "Asian Football Confederation",
+      "date": "June 16, 2023",
+      "time": "9:00 PM ",
+      "description": "The Asian Cup, run by the Asian Football Confederation (AFC), is Asias most significant sporting event. The winning team becomes the champion of Asia and automatically qualifies for the FIFA Confederations Cup. The last Asian Cup was held in Australia in 2015, the next will be held in the UAE in 2019.",
+      "image": "/images/sample/event4.jpg"
+    },
+    {
+      "id": "5",
+      "name": "FIFA Club World Cup",
+      "events": "FIFA Club World Cup",
+      "venue": "Abu Dhabi or China",
+      "address": "Abu Dhabi or China",
+      "members": "The tournament teams comprise the winners of that year's AFC Champions League",
+      "date": "Jul 10, 2023",
+      "time": "8:00 PM ",
+      "description": "The FIFA Club World Cup is an annual international men's association football competition involving seven club teams including the champion club team from each confederation along with the host nation's national champions.",
+      "image": "/images/sample/event5.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Women's World Cup",
+      "events": "Women's World Cup",
+      "venue": "Australia / New Zealand",
+      "address": "Stadium Australia, Sydney",
+      "members": "Women's national football teams",
+      "date": "July 12, 2023",
+      "time": "8:00 PM ",
+      "description": "The FIFA Women's World Cup is held every four years, a year after the men's version. It is the most important competition in international football for women.",
+      "image": "/images/sample/event6.jpg"
+    }
+  ]
+}
