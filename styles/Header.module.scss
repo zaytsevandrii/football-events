@@ -37,8 +37,11 @@
 
 @media (max-width: 768px) {
     .header {
+        display: flex;
+        flex: 1;
         flex-direction: column;
         height: auto;
+        width: auto;
 
         ul {
             margin: 20px 0;

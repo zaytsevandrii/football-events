@@ -9,7 +9,7 @@ export default function NotFoundPage() {
     <Layout title='Page Not Found'>
         <div className={styles.error}>
             {/* <h1>404</h1> */}
-            <Image src="/4042.jpg" alt="Vercel Logo" width={300} height={200} style={{marginTop:'-50px'}} />
+            <Image src="/4042.jpg" priority alt="Vercel Logo" width={300} height={200} style={{marginTop:'-50px'}} />
 
             <h4>Sorry, there is nothing here</h4>
             <Link href='/'>Go Back Home</Link>
