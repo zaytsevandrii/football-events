@@ -7,7 +7,7 @@ export default function EventItem({event,id}) {
   return (
     <div className={styles.event}>
         <div className={styles.img}>
-            <Image alt='football events' priority src={img?.formats?.thumbnail?.url?img.url:'/images/event-default2.png'} width={187} height={110}/>
+            <Image alt='football events' priority src={img?.formats?.thumbnail?.url?img.url:'/images/event-default.png'} width={187} height={110}/>
         </div>
 
         <div className={styles.info}>
