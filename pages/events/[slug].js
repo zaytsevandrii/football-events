@@ -13,9 +13,9 @@ const deleteEvent = ()=>{
     return <Layout>
         <div className={styles.event}>
             <div className={styles.controls}>
-               {/*  <Link href={`/events/edit/${event.id}`}>
+                <Link href={`/events/edit/${event?.id}`}>
                     <FaPencilAlt/>Edit Event
-                </Link> */}
+                </Link>
                 <a href="#" className={styles.delete} onClick={deleteEvent}><FaTimes/>Delete Event</a>
             </div>
 
@@ -60,7 +60,6 @@ export async function getStaticPaths(){
 export async function getStaticProps({params:{slug}}){
     const res = await fetch(`${API_URL}/api/events/${slug}?populate=*`)
     const {data} = await res.json()
-console.log(data)
 
     return{
         props:{

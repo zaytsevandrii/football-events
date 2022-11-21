@@ -3,11 +3,11 @@ import styles from '@/styles/EventItem.module.scss'
 import Link from 'next/link'
 
 export default function EventItem({event,id}) {
-    const img = event.image.data[0].attributes
+    const img = event?.image?.data[0]?.attributes
   return (
     <div className={styles.event}>
         <div className={styles.img}>
-            <Image alt='football events' priority src={img.formats.thumbnail.url?img.url:'/images/event-default2.png'} width={187} height={110}/>
+            <Image alt='football events' priority src={img?.formats?.thumbnail?.url?img.url:'/images/event-default2.png'} width={187} height={110}/>
         </div>
 
         <div className={styles.info}>
