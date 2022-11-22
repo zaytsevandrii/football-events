@@ -1,10 +1,10 @@
 
 import Layout from '@/components/Layout'
 import {API_URL} from '@/config/index'
-import EventItem from '@/components/EventItem'
 import qs from 'qs'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import EventItemS from '@/components/EventItemSearch'
 
 export default function SearchPage({events}) {
     const router = useRouter()
@@ -15,7 +15,7 @@ export default function SearchPage({events}) {
       {events.length === 0 && <h3>No events to Show</h3>}
 
       {events.map(event=>(
-        <EventItem event={event.attributes} id={event.id}  key={event.id}>{event.id}</EventItem>
+        <EventItemS event={event.attributes} id={event.id}  key={event.id}>{event.id}</EventItemS>
       ))}
     </Layout>
   )

@@ -8,9 +8,10 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function add() {
+  const [id,setId] = useState('')
     const [values, setValues] = useState({
         name: "",
-        participans: "",
+        participants: "",
         venue: "",
         address: "",
         date: "",
@@ -27,24 +28,38 @@ export default function add() {
           toast.error('Fill the fields')
         }
 
-        const res = await fetch(`${API_URL}/events`,{
-          method:'POST',
-          headers:{
-            'Content-Type': 'application/json'
+        const res = await fetch(`${API_URL}/api/events`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
           },
-          body: JSON.stringify(values)
+          body: JSON.stringify({
+            data:{
+                id:id,
+                name:values.name,
+                venue:values.venue,
+                address:values.address,
+                date:values.date,
+                time:values.time,
+                participants:values.participants,
+                description:values.description,
+            }
+          }),
         })
 
-        if(!res.ok){
-          toast.error('Something went wrong')
-        }else{
+       
           const {event} = await res.json()
-          router.push(`events/${event.slug}`)
-        }
+          if (!res.ok) {
+            toast.error('Something Went Wrong')
+          } else {
+            router.push(`${id}`)
+          }
+         
     }
     const handleInputChange = (e) => {
         const { name, value } = e.target
         setValues({ ...values, [name]: value })
+        setId(Math.floor(Math.random() * 10000))
     }
     return (
         <Layout title="Add New Event">
@@ -63,13 +78,14 @@ export default function add() {
               onChange={handleInputChange}
             />
           </div>
+          
           <div>
-            <label htmlFor='participans'>Participans</label>
+            <label htmlFor='participants'>participants</label>
             <input
               type='text'
-              name='participans'
-              id='participans'
-              value={values.participans}
+              name='participants'
+              id='participants'
+              value={values.participants}
               onChange={handleInputChange}
             />
           </div>
