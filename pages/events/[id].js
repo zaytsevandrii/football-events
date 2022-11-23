@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/router"
 
 export default function EventPage({event}) {
-    console.log(event.id)
     const router = useRouter()
     const img = event.attributes.image.data?event.attributes.image.data[0].attributes:'/images/event-default.png'
     /* const img = event?.attributes?.image?.data[0]?.attributes */
