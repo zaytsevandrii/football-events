@@ -7,7 +7,6 @@ const PER_PAGE=4
 
 export default function EventsPage({events,page,total}) {
   const lastPage = Math.ceil(total.data.length / PER_PAGE)
-  console.log(total.data.length)
   return (
     <Layout>
      
