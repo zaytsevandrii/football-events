@@ -173,7 +173,7 @@ export default function EditEventPage({event}) {
     )
 }
 
-export async function getServerSideProps({params:{id}}){
+export async function getServerSideProps({params:{id},req}){
     const res = await fetch(`${API_URL}/api/events/${id}?populate=*`)
     const {data} = await res.json()
 

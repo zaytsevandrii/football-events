@@ -12,7 +12,6 @@ export default function LoginPage() {
     const [password, setPassword] = useState("")
 
     const { login, error } = useContext(AuthContext)
-console.log(error)
     useEffect(() => {
         error && toast.error(error)
       });

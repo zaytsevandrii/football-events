@@ -3,17 +3,20 @@ import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Layout from "@/components/Layout"
 import styles from "@/styles/AuthForm.module.scss"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Link from "next/link"
 import AuthContext from "@/context/AuthContext"
 
 export default function RegisterPage() {
-    const [userName, setUserName] = useState("")
+    const [username, setUsername] = useState('')
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [passwordConfirm, setPasswordConfirm] = useState("")
 
     const {register,error} = useContext(AuthContext)
+    useEffect(() => {
+        error && toast.error(error)
+      });
     const handleSubmit = (e) => {
         e.preventDefault()
         
@@ -21,7 +24,7 @@ export default function RegisterPage() {
             toast.error('Password do not match')
             return
         }
-        register({userName,email, password})
+        register({username,email, password})
     }
     return (
         <Layout title="User Registration">
@@ -33,7 +36,7 @@ export default function RegisterPage() {
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="username">Username</label>
-                        <input type="text" id="username" value={userName} onChange={(e) => setUserName(e.target.value)} />
+                        <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
                     </div>
                     <div>
                         <label htmlFor="email">Email Address</label>
@@ -47,7 +50,7 @@ export default function RegisterPage() {
                         <label htmlFor="password">Confirm Password</label>
                         <input type="password" id="passwordConfirm" value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} />
                     </div>
-                    <input type="submit" value='Login' className="btn"/>
+                    <input type="submit" value='Register' className="btn"/>
                 </form>
                 <p>Already have an account? <Link href='/account/login'>Login</Link></p>
             </div>

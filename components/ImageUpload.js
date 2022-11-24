@@ -4,7 +4,6 @@ import { useState } from "react"
 
 export default function ImageUpload({ evtId, imageUploaded, values }) {
     const [image, setImage] = useState(null)
-console.log(evtId)
     const handleFileChange = (e) => {
         setImage(e.target.files[0])
     }
