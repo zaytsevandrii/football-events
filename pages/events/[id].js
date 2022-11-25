@@ -20,9 +20,10 @@ export default function EventPage({ event }) {
                 method: "DELETE",
             })
 
-            const { data } = await res.json()
+            const data  = await res.json()
             if (!res.ok) {
-                toast.error(data.message)
+
+                toast.error(data.error.message)
             } else {
                 router.push("/events")
             }
@@ -39,10 +40,10 @@ export default function EventPage({ event }) {
                             Edit Event
                         </Link>
 
-                        <a href="#" className={styles.delete} onClick={deleteEvent}>
+                       {/*  <a href="#" className={styles.delete} onClick={deleteEvent}>
                             <FaTimes />
                             Delete Event
-                        </a>
+                        </a> */}
                     </div>
                 )}
                 <ToastContainer />

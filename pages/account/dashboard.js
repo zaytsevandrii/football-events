@@ -3,12 +3,29 @@ import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import { parseCookies } from "@/helpers/index";
 import styles from '@/styles/Dashboard.module.scss'
+import { useRouter } from "next/router";
 
-export default function dashboard({events}) {
+export default function dashboard({events,token}) {
   console.log(events)
-  const deleteEvent = (id)=>{
-    console.log(id)
-  }
+  const router = useRouter()
+  const deleteEvent = async (id) => {
+    if (confirm("Are you sure?")) {
+        const res = await fetch(`${API_URL}/api/events/${id}`, {
+            method: "DELETE",
+            headers: {
+              Authorization:`Bearer ${token}`,
+            },
+        })
+
+        const data  = await res.json()
+        if (!res.ok) {
+
+            toast.error(data.error.message)
+        } else {
+            router.reload()
+        }
+    }
+}
   return (
     <Layout>
       <div className={styles.dash}>
@@ -35,6 +52,9 @@ export async function getServerSideProps({req}){
   const {data} = await res.json()
 
   return{
-    props:{events:data},
+    props:{
+      events:data,
+      token
+    },
   }
 }

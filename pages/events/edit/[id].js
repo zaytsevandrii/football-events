@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout"
 import { API_URL } from "@/config/index"
+import { parseCookies } from "@/helpers/index"
 import {FaImage} from 'react-icons/fa'
 import styles from "@/styles/Form.module.scss"
 import { useRouter } from "next/router"
@@ -11,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Image from 'next/image'
 import ImageUpload from "@/components/ImageUpload"
 
-export default function EditEventPage({event}) {
+export default function EditEventPage({event,token}) {
     const id=event.id
     const [imagePrev,setImagePrev] = useState(
         event.attributes.image.data?event.attributes.image.data[0].attributes.formats.thumbnail.url:null
@@ -40,6 +41,7 @@ export default function EditEventPage({event}) {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
+            Authorization:`Bearer ${token}`,
           },
           body: JSON.stringify({
             data:{
@@ -176,10 +178,11 @@ export default function EditEventPage({event}) {
 export async function getServerSideProps({params:{id},req}){
     const res = await fetch(`${API_URL}/api/events/${id}?populate=*`)
     const {data} = await res.json()
-
+    const {token} = parseCookies(req)
     return{
         props:{
-            event: data
+            event: data,
+            token
         },
     }
 }

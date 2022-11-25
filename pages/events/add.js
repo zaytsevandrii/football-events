@@ -6,8 +6,9 @@ import Link from "next/link"
 import { useState } from "react"
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { parseCookies } from "@/helpers/index"
 
-export default function add() {
+export default function add({token}) {
   const [id,setId] = useState('')
     const [values, setValues] = useState({
         name: "",
@@ -32,6 +33,7 @@ export default function add() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            Authorization:`Bearer ${token}`,
           },
           body: JSON.stringify({
             data:{
@@ -59,7 +61,7 @@ export default function add() {
     const handleInputChange = (e) => {
         const { name, value } = e.target
         setValues({ ...values, [name]: value })
-        setId(Math.floor(Math.random() * 10000))
+        setId(Math.floor(Math.random() * 50000))
     }
     return (
         <Layout title="Add New Event">
@@ -146,4 +148,16 @@ export default function add() {
             </form>
         </Layout>
     )
+}
+
+
+export async function getServerSideProps({req}){
+  const {token} = parseCookies(req)
+
+
+  return {
+    props:{
+      token
+    }
+  }
 }
