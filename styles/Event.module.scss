@@ -2,29 +2,28 @@
     position: relative;
     padding-top: 10px;
     margin-top: -20px;
-    
 
     h3 {
-      font-size: 25px;
-      @media (max-width: 600px){
-        font-size: 18px;
-      }
+        font-size: 25px;
+        @media (max-width: 600px) {
+            font-size: 18px;
+        }
     }
 
     p {
-      margin: 5px 0;
+        margin: 5px 0;
     }
-  } 
+}
 
- /*  .image {
+/*  .image {
     margin-bottom: 20px;
     margin-right: 10px auto;
     width: 200px;
 
     
   } */
- 
-  .image2{
+
+.image2 {
     position: relative;
     display: flex;
     flex: 1;
@@ -34,29 +33,29 @@
     text-align: center;
     max-width: 100%;
     height: auto;
-    
-   /*  @media (max-width: 768px){
+
+    /*  @media (max-width: 768px){
       max-width: 480px;
       height: 300px;
     } */
-  }
-  
-  .font{
-    font-weight: 400;
-  }
+}
 
-  .controls {
+.font {
+    font-weight: 400;
+}
+
+.controls {
     position: absolute;
     right: 30px;
     top: 0;
-  }
-  
-  .delete {
+}
+
+.delete {
     margin-left: 20px;
     color: red;
-  }
-  
-  .back {
+}
+
+.back {
     display: block;
     margin-top: 40px;
-  }
+}
