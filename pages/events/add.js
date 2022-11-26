@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { parseCookies } from "@/helpers/index"
 
-export default function add({token}) {
+export default function Add({token}) {
   const [id,setId] = useState('')
     const [values, setValues] = useState({
         name: "",
