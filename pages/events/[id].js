@@ -39,12 +39,12 @@ export default function EventPage({ event }) {
                             Edit Event
                         </Link>
 
-                        {
-                            <a href="#" className={styles.delete} onClick={deleteEvent}>
+                        
+                          {/*   <a href="#" className={styles.delete} onClick={deleteEvent}>
                                 <FaTimes />
                                 Delete Event
-                            </a>
-                        }
+                            </a> */}
+                        
                     </div>
                 )}
                 <ToastContainer />
