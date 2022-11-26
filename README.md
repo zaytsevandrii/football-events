@@ -2,15 +2,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Football Events
 
-You can add any football events after registration, edit and delete
+You can, edit and delete add any football events after registration.
 
 
 ## Usage
 
 The Strapi backend can be found here  (https://github.com/zaytsevandrii/football-events-backend)
 
--Modal Components
--SASS
+Modal Components
+
+SASS
 
 
 ## Deploy on Vercel
